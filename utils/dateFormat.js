@@ -1,7 +1,8 @@
 const addDateSuffix = date => {
     let dateStr = date.toString();
 
-    const lastChar = dateStr.charAt(dateStr.lenght -1);
+    // get last char of date string
+    const lastChar = dateStr.charAt(dateStr.length - 1);
 
     if (lastChar === '1' && dateStr !== '11') {
         dateStr = `${dateStr}st`;
@@ -53,7 +54,7 @@ module.exports = (
             11: 'December'
         };
     }
-    
+
     const dateObj = new Date(timestamp);
     const formattedMonth = months[dateObj.getMonth()];
 

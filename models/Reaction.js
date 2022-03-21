@@ -1,10 +1,10 @@
 const { Schema, Types } = require('mongoose');
-const dateFormat = require('../utils/date-format');
+const dateFormat = require('../utils/dateFormat');
 
-// reaction schema 
+// reaction schema tied to thought
 const reactionSchema = new Schema(
     {
-        // custom id thats diffrent from parent id
+        // set custom id to avoid confusion with parent id
         reactionId: {
             type: Schema.Types.ObjectId,
             default: () => new Types.ObjectId()
@@ -16,12 +16,12 @@ const reactionSchema = new Schema(
         },
         username: {
             type: String,
-            required: true
+            required: true,
         },
         createdAt: {
             type: Date,
             default: Date.now,
-            get: createdAtVal = dateFormat(createdAtVal)
+            get: createdAtVal => dateFormat(createdAtVal)
         }
     },
     {
