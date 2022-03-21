@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/Exlautis/Social-network-api#readme",
   "dependencies": {
+    "express": "^4.17.3",
+    "json": "^11.0.0",
     "mongoose": "^6.2.7"
   }
 }
